@@ -20,11 +20,10 @@ include("estructura/conecta.php");
 			echo "<table class='table table-th-block'>
 				<tr class=titulo>
 					<th style='display:none'>ID</th>
-					<th class='desc_largo'>Producto</th>
-					<th style='width:100px;text-align:right'>Precio</th>
-					<th style='width:100px;text-align:right'>Cantidad</th>
-					<th style='width:50px;text-align:right'>Actualizar</th>
-					<th style='width:50px;text-align:right'>Eliminar</th>
+					<th style='text-align:center'>Producto</th>
+					<th style='text-align:center'>Precio</th>
+					<th style='text-align:center'>Cantidad</th>
+					<th colspan='2' style='text-align:center'>Acciones</th>					
 				</tr>";
 				
 			// comienza un bucle que leera todos los registros y ejecutara las ordenes que siguen

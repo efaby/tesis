@@ -84,11 +84,11 @@ $totalRows_rsClientes = mysql_num_rows($rsClientes);
       <td colspan="2"><input type="text" name="Cedula" value="<?php echo htmlentities($row_rsClientes['cedula'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Nombre:</td>
+      <td nowrap="nowrap" align="right">Nombres:</td>
       <td colspan="2"><input type="text" name="Nombre" value="<?php echo htmlentities($row_rsClientes['nombre'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Apellido:</td>
+      <td nowrap="nowrap" align="right">Apellidos:</td>
       <td colspan="2"><input type="text" name="Apellido" value="<?php echo htmlentities($row_rsClientes['apellido'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
     </tr>
     <tr valign="baseline">

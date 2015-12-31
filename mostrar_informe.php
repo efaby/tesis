@@ -57,7 +57,7 @@ $totalRows_rsRepara = mysql_num_rows($rsRepara);
     <td colspan="5"><h4>DATOS DEL EQUIPO</h4></td>
     </tr>
   <tr>
-    <td width="70" >Nombre:</td>
+    <td width="70" >Equipo:</td>
     <td width="200"> <label>
       <input type="text" name="txtNombre" id="txtNombre" value="<?php echo htmlentities($row_rsRepara['articulo'], ENT_COMPAT, 'utf-8'); ?>" readonly="readonly" />
     </label>   
@@ -80,16 +80,16 @@ $totalRows_rsRepara = mysql_num_rows($rsRepara);
     </label></td>
   </tr>
   <tr>
-    <td>Detalle da&ntilde;o:</td>
+    <td>Detalle del Da&ntilde;o:</td>
     <td colspan="4"><label>
       <textarea name="txtDetalle" cols="50" id="txtDetalle" readonly="readonly"><?php echo htmlentities($row_rsRepara['detalle'], ENT_COMPAT, 'utf-8'); ?></textarea>
     </label></td>
   </tr>
   <tr> 
-  	<td>Fecha de ingreso:</td>
+  	<td>Fecha de Ingreso:</td>
     <td><input readonly type="text" name="fec_alta" value="<?php echo htmlentities($row_rsRepara['fecha_ingreso'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
     <td width="20">&nbsp;</td>
-	<td>Fecha de reparacion:</td>
+	<td>Fecha de Reparaci&oacute;n:</td>
     <td><input readonly type="text" name="fec_repara" value="<?php echo htmlentities($row_rsRepara['fecha_reparado'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td> 
     </tr>
   <tr>
@@ -99,7 +99,7 @@ $totalRows_rsRepara = mysql_num_rows($rsRepara);
     </label></td>
   </tr>
   <tr>
-  	 <td>Productos usados:</td>
+  	 <td>Productos Usados:</td>
     <td colspan="4"><label>
       <textarea name="txtProdusa" cols="50" id="txtProdusa" readonly="readonly"><?php echo htmlentities($row_rsRepara['productos_usados'], ENT_COMPAT, 'utf-8'); ?></textarea>
     </label></td> 

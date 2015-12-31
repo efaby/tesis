@@ -22,12 +22,11 @@ require_once("estructura/conecta.php");
 			echo "<table class='table table-th-block'>
 				<tr class=titulo>
 					<th style='display:none'>Cod_Proveedor</th>
-					<th style='width:50px;text-align:center'>RUC</th>
-					<th style='width:150px;text-align:center'>Nombre</th>
-					<th style='width:150px;text-align:center'>Direcci&oacute;n</th>
-					<th style='width:50px;text-align:center'>Tel&eacute;fono</th>
-					<th style='width:50px;text-align:center'>Actualizar</th>
-					<th style='width:50px;text-align:center'>Eliminar</th>
+					<th style='text-align:center'>RUC</th>
+					<th style='text-align:center'>Nombre del Proveedor</th>
+					<th style='text-align:center'>Direcci&oacute;n</th>
+					<th style='text-align:center'>Tel&eacute;fono</th>
+					<th colspan='2' style='text-align:center'>Acciones</th>					
 				</tr>";
 				
 			// comienza un bucle que leera todos los registros y ejecutara las ordenes que siguen
@@ -38,9 +37,9 @@ require_once("estructura/conecta.php");
 				echo "<td style='text-align:left'>" . $proveedores['Nombre'] . "&nbsp;". $proveedores['Apellido']. " </td>"; // imprime el nombre y apellido
 				echo "<td style='text-align:left'>" . $proveedores['Direccion'] . " </td>"; // imprime la direccion
 				echo "<td style='text-align:left'>" . $proveedores['Telefono'] . " </td>"; // imprime el telefono
-				echo "<td style='text-align:right'> 
+				echo "<td style='text-align:center'> 
 						<a class='btn btn-info btn-xs' href='update_proveedor.php?Cod_Proveedor=" . $proveedores['Cod_Proveedor']. "'>  Actualizar</a></td>";
-				echo "<td style='text-align:right' >   
+				echo "<td style='text-align:center' >   
 						<a class='btn btn-danger btn-xs'style=\"cursor:pointer;\" onclick=\"eliminarDato('".$proveedores['Cod_Proveedor']."')\">
 						 Eliminar</a> </td>";
 			  echo "</tr>"; 

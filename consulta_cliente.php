@@ -17,13 +17,12 @@ require_once("estructura/conecta.php");
 			echo "<table class='table table-th-block'>
 				<tr class=titulo>
 					<th style='display:none'>id_Cliente</th>
-					<th style='width:50px;text-align:center'>C&eacute;dula</th>
-					<th style='width:150px;text-align:center'>Nombre</th>
-					<th style='width:150px;text-align:center'>Email</th>
-					<th style='width:250px;text-align:center'>Direcci&oacute;n</th>
-					<th style='width:50px;text-align:center'>Tel&eacute;fono</th>
-					<th style='width:50px;text-align:center'>Actualizar</th>
-					<th style='width:50px;text-align:center'>Eliminar</th>
+					<th style='text-align:center'>C&eacute;dula</th>
+					<th style='text-align:center'>Nombre del Cliente</th>
+					<th style='text-align:center'>Email</th>
+					<th style='text-align:center'>Direcci&oacute;n</th>
+					<th style='text-align:center'>Tel&eacute;fono</th>
+					<th colspan='2' style='text-align:center'>Acciones</th>					
 				</tr>";
 				
 			// comienza un bucle que leera todos los registros y ejecutara las ordenes que siguen

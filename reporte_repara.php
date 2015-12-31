@@ -19,15 +19,15 @@ $row_rsRepara = mysql_fetch_assoc($rsRepara);
 <table class='table table-th-block'>
 <tr class=titulo>
 	<th style='display:none'>id_reparacion</th>
-	<th style='width:50px;text-align:center'>Cliente</th>
-	<th style='width:250px;text-align:center'>T&eacute;cnico</th>
-	<th style='width:250px;text-align:center'>Articulo</th>
-	<th style='width:50px;text-align:center'>Detalle de da&ntilde;o</th>
-	<th style='width:50px;text-align:center'>Fecha Ingreso</th>
-	<th style='width:50px;text-align:center'>Informe</th>
-    <th style='width:50px;text-align:center'>Productos Usados</th>
-    <th style='width:50px;text-align:center'>Costo</th>
-    <th style='width:50px;text-align:center'>Fecha Reparado</th>
+	<th style='text-align:center'>Cliente</th>
+	<th style='text-align:center'>T&eacute;cnico</th>
+	<th style='text-align:center'>Art&iacute;culo</th>
+	<th style='text-align:center'>Detalle de Da&ntilde;o</th>
+	<th style='text-align:center'>Fecha de Ingreso</th>
+	<th style='text-align:center'>Informe</th>
+    <th style='text-align:center'>Productos Usados</th>
+    <th style='text-align:center'>Costo</th>
+    <th style='text-align:center'>Fecha de Reparaci&oacute;n</th>
 </tr>
 <?php
 // comienza un bucle que leera todos los registros y ejecutara las ordenes que siguen

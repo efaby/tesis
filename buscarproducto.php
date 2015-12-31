@@ -53,15 +53,14 @@ $totalRows_rsProducto = mysql_num_rows($rsProducto);
 	<div class="section">
     <div class="container">
     <div class="the-box" id="resultado">
-    <h2 class="page-title">Listado de Productos por Nombre</h2>
-<form id="form1" name="form1" method="post" action="buscarproducto.php">  
+    <h2 class="page-title">Listado de Productos</h2>
+<form id="form1" name="form1" method="post" action="buscarproducto.php">
 <table border="0" >
   <tr>
-    <td><label id="lblOpcion" >Escriba  el Nombre: </label> </td>
-    <td ><label>
-      <input type="text" name="txtCodigo" id="txtCodigo" />
-      </label></td>
- 
+    <td>Nombre del Producto:</td>
+    <td>
+      <input type="text" name="txtCodigo" id="txtCodigo" placeholder="Buscar" />
+    </td> 
     <td  align="center"><label>
       <button type="submit" name="btnBuscar" id="btnBuscar" class="btn btn-info">Buscar</button>
     </label>     <!--<a href="productos.php">Regresar</a>--></td>

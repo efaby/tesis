@@ -41,8 +41,8 @@ if(mysql_num_rows($res1)==0){
     <th style='width:150px;text-align:center'>Nombre</th>
     <th style='width:150px;text-align:center'>Art&iacute;culo</th>
     <th style='width:150px;text-align:center'>Detalle</th>
-    <th style='width:150px;text-align:center'>Fecha ingreso</th>
-    <th style='width:150px;text-align:center'>T&eacute;cnico</th>
+    <th style='width:150px;text-align:center'>Fecha de Ingreso</th>
+    <th style='width:150px;text-align:center'>Nombre del T&eacute;cnico</th>
     <th style='width:150px;text-align:center'>Informe</th>
 </tr>
 <?php do { ?>

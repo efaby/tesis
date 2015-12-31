@@ -80,7 +80,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
 
 <br /><br />
 
-Nombre del Cliente:<input type="text" id="bus" onKeyUp="myFunction()" size="30" required="required" autofocus="autofocus" placeholder="Buscar" />
+Nombre del Cliente: <input type="text" id="bus" onKeyUp="myFunction()" size="30" required="required" autofocus="autofocus" placeholder="Buscar" />
 
 <div id="myDiv"></div>
 
@@ -99,9 +99,9 @@ Nombre del Cliente:<input type="text" id="bus" onKeyUp="myFunction()" size="30" 
     <td colspan="5"><h4>DATOS DEL EQUIPO</h4></td>
     </tr>
   <tr>
-    <td width="70" >Nombre:</td>
+    <td width="70" >Equipo:</td>
     <td width="200"> <label>
-      <input type="text" name="txtNombre" id="txtNombre" onkeypress="return LetrasNumeros(event)" />
+      <input type="text" name="txtNombre" id="txtNombre" onkeypress="return LetrasNumeros(event)">
     </label>   
     </td>
     <td width="20">&nbsp;</td>
@@ -122,16 +122,16 @@ Nombre del Cliente:<input type="text" id="bus" onKeyUp="myFunction()" size="30" 
     </label></td>
   </tr>
   <tr>
-    <td>Detalle da&ntilde;o:</td>
+    <td>Detalle de Da&ntilde;o:</td>
     <td colspan="4"><label>
       <textarea name="txtDetalle" cols="50" id="txtDetalle" onkeypress="return LetrasNumeros(event)"></textarea>
     </label></td>
   </tr>
   <tr> 
-  	<td>Fecha de ingreso:</td>
+  	<td>Fecha de Ingreso:</td>
     <td><input readonly type="text" name="fec_alta" value="<?php echo date("Y/m/d"); ?>" size="32" /></td>
     <td width="20">&nbsp;</td>
-    <td> T&eacute;cnico: </td>
+    <td> Nombre del T&eacute;cnico: </td>
     <td> <select name="lstTecnico" id="lstTecnico" >
 <?php
 do {  
