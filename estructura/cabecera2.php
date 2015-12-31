@@ -8,7 +8,7 @@
 <body style="background-color: #f6f7f9;">
 <div class="top-navbar dark-color">
 		<div class="container">
-
+<div class="logo" style="color: #fff;"><img src="images/logo.png"></div>  
 			<div class="title-menu" style="text-align: center;">
 				<h1>C.A.T.S  EVOLUTION</h1>
 			</div>

@@ -3,8 +3,8 @@ session_start();
 
 $titulo = "Lista de Clientes para Actualizar / Eliminar";
 require_once("estructura/conecta.php");
-require_once("estructura/meta_tags_cliente.php");
 require_once("estructura/cabecera.php");
+require_once("estructura/meta_tags_cliente.php");
 
 ?>
 	<div class="section">

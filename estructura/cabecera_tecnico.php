@@ -15,7 +15,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
   unset($_SESSION['MM_UserGroup']);
   unset($_SESSION['PrevUrl']);
   session_destroy();
-  $logoutGoTo = "index.php";
+  $logoutGoTo = "sistema.php";
   if ($logoutGoTo) {
     header("Location: $logoutGoTo");
     exit;
