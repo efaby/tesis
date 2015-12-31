@@ -110,7 +110,7 @@ a{
 .feature_title{
     position:relative;
     padding-bottom:10px;
-    color:#EE3B24!important;
+    color:#3bafda!important;
     width: 45%;
     margin: 10px auto;
     font-size: 40px;
@@ -155,7 +155,7 @@ a{
     border: medium none;
     vertical-align: middle;
     cursor: pointer;
-    border:1px solid#EE3B24;
+    border:1px solid#3bafda;
     white-space: nowrap;
     font-size: 16px;
     line-height: 1.42857;
@@ -167,7 +167,7 @@ a{
     transition: all .3s ease-in-out;
 }
 .btn-dark:hover{
-    background: #EE3B24;
+    background: #3bafda;
     color: #fff;
 }
 .feature-tab,.team-items,.pricing,.single_blog ,#testimonial .owl-carousel .owl-wrapper,.contact_full{
@@ -237,7 +237,7 @@ section{
     color: #222;
 }
 .navbar-brand img{
-  height: 180%;
+  
     width: auto;
     vertical-align: middle;
     max-width: 100%;
@@ -347,7 +347,7 @@ ul.navbar-nav > .active > a{
 /* Carousel Slider
 ============================================== */
 #slider_part{
-   height: 800px;
+   height: 450px;
    width: 100%;
    overflow:hidden;
 }
@@ -443,7 +443,7 @@ ul.navbar-nav > .active > a{
     width: 10%;
     left: 45%;
     margin:0 auto;
-    bottom:30%;
+    bottom:50%;
 }
 
 .carousel-indicators li{
@@ -474,7 +474,7 @@ ul.navbar-nav > .active > a{
 .slides-control .carousel-control{
     position: absolute;
     width: 240px;
-    top: 35%;
+    top: 30%;
     z-index:10;
 }
 
@@ -513,6 +513,7 @@ ul.navbar-nav > .active > a{
     height: auto;*/
     width: 100%;
     display: block;
+     height: 450px;
 }
 
 /*-- Animation --*/
@@ -972,10 +973,10 @@ padding: 8px 15px;
     margin-top: 20px;
 }
 .main-tab-content .c-tab a{
-    color: #EE3B24;
+    color: #3bafda;
     text-transform: uppercase;
     font-weight: 700;
-    border-bottom: 1px solid#EE3B24;
+    border-bottom: 1px solid#3bafda;
     padding-top: 7px;
 }
 .feature-tab{
@@ -1030,7 +1031,7 @@ padding: 8px 15px;
     font-size: 14px;
 }
 .main-tab-list > li.active {
-    background: #EE3B24!important;
+    background: #3bafda!important;
     position: relative;
 }
 .main-tab-list > li.active:after{
@@ -1830,8 +1831,8 @@ padding: 8px 15px;
     
    
 #back-top .btn-primary{
-    background: #EE3B24;
-    border-color: #EE3B24;
+    background: #3bafda;
+    border-color: #3bafda;
     padding: 0px;
     font-size: 18px;
     width: 36px;
@@ -1839,7 +1840,7 @@ padding: 8px 15px;
 }
   
 #back-top a:hover{
-    background: #EE3B24;
+    background: #3bafda;
     opacity: 1;
 }
 
@@ -1899,7 +1900,7 @@ padding: 8px 15px;
     clear:both;
 }
 .single_blog h4:hover{
-    color: #EE3B24;
+    color: #3bafda;
 }
 .single_blog p{
     margin: 8px 0px;
@@ -2351,7 +2352,7 @@ padding: 8px 15px;
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     background: transparent;
-    color: #EE3B24!important;
+    color: #3bafda!important;
 }
 .navbar-inverse .navbar-nav >li> a{
     color: #eee!important;
@@ -2371,7 +2372,7 @@ padding: 8px 15px;
     font-weight: 600;
 }
 .hero-title span{
-    color: #EE3B24;
+    color: #3bafda;
 }
 .hero-description {
     margin-bottom: 30px;
@@ -2460,7 +2461,7 @@ iframe{
 .video-text .panel-default{}
 .video-text .panel-group .panel-heading{
     border-radius: 0px;
-    border-color: #EE3B24;
+    border-color: #3bafda;
     position: relative;
     padding: 7px 15px;
     background: #FAFAFA;
@@ -2483,7 +2484,7 @@ iframe{
 }
 .video-text .panel-group  h4.panel-title a:after {
     font-family: FontAwesome;
-    color: #EE3B24;
+    color: #3bafda;
     font-size: 14px;
     right: 0px;
     position: absolute;
@@ -2497,7 +2498,7 @@ iframe{
 }
 
 .video-text .panel-group .panel-heading.active{
-    border: 1px solid#EE3B24;
+    border: 1px solid#3bafda;
 }
 
 
@@ -2561,7 +2562,7 @@ iframe{
     border-bottom-left-radius: 5px;
 }
 .video-text .panel-group .p2.active{
-    background:#EE3B24;
+    background:#3bafda;
     color: #fff;
     padding: 7px 0px;
     padding-left: 15px;
@@ -2613,7 +2614,7 @@ iframe{
     position: absolute;
     width: 2px;
     height: 110px;
-    background: #EE3B24;
+    background: #3bafda;
     left: 10px;
     top: -10px;
 
@@ -2623,7 +2624,7 @@ iframe{
     position: absolute;
     width: 2px;
     height: 110px;
-    background: #EE3B24;
+    background: #3bafda;
     right: 10px;
     top: -10px;
 }

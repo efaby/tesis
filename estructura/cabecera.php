@@ -37,7 +37,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 <div class="top-navbar dark-color">
 			<div class="container">
 
-<div class="logo" style="color: #fff;"><h3>C.A.T.S  EVOLUTION</h3></div>  
+<div class="logo" style="color: #fff;"><img src="images/logo.png"></div>  
 
 <ul class="menus">
   <li class="parent"><a href="#fakelink">Producto</a> 

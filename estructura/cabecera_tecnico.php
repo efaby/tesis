@@ -32,7 +32,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 <div class="top-navbar dark-color">
 			<div class="container">
 
-<div class="logo">C.A.T.S  EVOLUTION</div>  
+<div class="logo"><img src="images/logo.png"></div>  
 <ul id="MenuBar1" class="menus">
 <li class="parent"><a href="#" >Reparaci&oacute;n</a>
   <ul class="sub-menus">
