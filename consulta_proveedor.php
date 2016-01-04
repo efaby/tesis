@@ -7,7 +7,7 @@ require_once("estructura/conecta.php");
 
 //include("izquierda.php");
 ?>
-	  <h2 class="page-title">Proveedores</h2>
+	  <h2 class="page-title">Listado de Proveedores</h2>
 	
 		<div class='text-border'>
 		<?php

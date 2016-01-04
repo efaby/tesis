@@ -67,11 +67,11 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 	<div class="section">
     <div class="container">
     <div class="the-box">
-    <h2 class="page-title">Ingreso de Productos</h2>
+    <h2 class="page-title">Creaci&oacute;n de Producto</h2>
 <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
   <table align="center">
     <tr valign="baseline">
-      <td nowrap="nowrap" >Nombre:</td>
+      <td nowrap="nowrap" >Nombre del Producto:</td>
       <td colspan="2"><input type="text" name="Nombre" value="" size="32" onkeypress="return LetrasNumeros(event)" /></td>
     </tr>
     <tr valign="baseline">
@@ -87,7 +87,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
       <td colspan="2"><input type="text" name="Cantidad" value="" size="32" onkeypress="return soloNumeros(event)" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" >Precio de compra:</td>
+      <td nowrap="nowrap" >Precio de Compra:</td>
       <td colspan="2"><input type="text" name="Precio_compra" value="" size="32" onkeypress="return soloNumeros(event)" /></td>
     </tr>
     <tr valign="baseline">

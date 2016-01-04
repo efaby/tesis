@@ -6,8 +6,7 @@ require_once("estructura/conecta.php");
 
 //include("izquierda.php");
 ?>
-		<h2 class="page-title">Clientes</h2>
-	
+		<h2 class="page-title">Listado de Clientes</h2>
 		<?php		
 			$resultado = mysql_query("SELECT * FROM clientes");
 			

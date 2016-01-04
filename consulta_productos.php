@@ -7,7 +7,7 @@ include("estructura/conecta.php");
 //include("izquierda.php");
 ?>
 
-  <h2 class="page-title">Productos</h2>
+  <h2 class="page-title">Listado de Productos</h2>
 		<?php
 			/*MOSTRAR Carro*/
 			//$id = $_GET['id'];

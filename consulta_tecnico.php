@@ -6,7 +6,7 @@ include("estructura/conecta.php");
 
 //include("izquierda.php");
 ?>
-  <h2 class="page-title">T&eacute;cnicos</h2>
+  <h2 class="page-title">Listado de T&eacute;cnicos</h2>
 	
 		<?php		
 			$resultado = mysql_query("SELECT * FROM tecnico");

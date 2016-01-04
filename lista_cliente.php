@@ -16,8 +16,6 @@ require_once("estructura/meta_tags_cliente.php");
 	</div> <!-- Cierro derecha -->
 	</div>
 	</div>
-	
-
 <?php
 include("estructura/pie.php");
 include("estructura/cerrar_etiquetas.php");

@@ -94,11 +94,11 @@ $totalRows_rsProveedor = mysql_num_rows($rsProveedor);
       <td colspan="2"><input name="Apellido" type="text" value="<?php echo htmlentities($row_rsProveedor['Apellido'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Direccion:</td>
+      <td nowrap="nowrap" align="right">Direcci&oacute;n:</td>
       <td colspan="2"><input type="text" name="Direccion" value="<?php echo htmlentities($row_rsProveedor['Direccion'], ENT_COMPAT, 'utf-8'); ?>" size="32" onkeypress="return LetrasNumeros(event)" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Telefono:</td>
+      <td nowrap="nowrap" align="right">Tel&eacute;fono:</td>
       <td colspan="2"><input name="Telefono" type="text" value="<?php echo htmlentities($row_rsProveedor['Telefono'], ENT_COMPAT, 'utf-8'); ?>" size="32" maxlength="9" onkeypress="return soloNumeros(event)" /></td>
     </tr>
     <tr valign="baseline">

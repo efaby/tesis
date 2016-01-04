@@ -74,7 +74,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 	<div class="section">
     <div class="container">
     <div class="the-box">
-    <h2 class="page-title">Ingreso de T&eacute;cnicos</h2>
+    <h2 class="page-title">Creaci&oacute;n de T&eacute;cnico</h2>
 <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
   <table align="center">
     <tr valign="baseline">
