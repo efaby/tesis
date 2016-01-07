@@ -1,4 +1,5 @@
  <!DOCTYPE html>
+ <?php session_start();?>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -64,7 +65,7 @@
                            	<li class="active"> <a href="#slider_part" class="page-scroll">Inicio </a></li>
                             <li><a href="#service"  class="page-scroll">Servicios</a> </li>
                             <li><a href="#portfolio" class="page-scroll" >Multimedia</a> </li>
-                            <li><a href="#contact" class="page-scroll">Contactanos</a> </li>
+                            <li><a href="#contact" class="page-scroll">Cont&aacute;ctanos</a> </li>
                             <li><a href="sistema.php" target="_blank" class="page-scroll">Acceder Sistema</a> </li>
                         </ul>
                      </nav>
@@ -87,7 +88,7 @@
            	 		</div>
            	 		<div class="carousel-caption">
                	 		<div class="col-md-12 col-xs-12 text-center">                     
-               	 			<h3 class="animated2"> <b>Asesoría</b>Técnica </h3>
+               	 			<h3 class="animated2"><b>Asesoría Técnica</b></h3>
                	 			<div class="line"></div>               	 			
                	 		</div>
            	 		</div>
@@ -98,7 +99,7 @@
            	 		</div>
            	 		<div class="carousel-caption">
                	 		<div class="col-md-12 col-xs-12 text-center">                    
-               	 			<h3 class="animated3"> Material Electrónico</h3>
+               	 			<h3 class="animated3"><b>Material Electrónico</b></h3>
                	 			<div class="line"></div>               	 			
                	 		</div>
            	 		</div>
@@ -110,7 +111,7 @@
            	 		<div class="carousel-caption">
                	 		<div class="col-md-12 col-xs-12 text-center">
                    
-               	 			<h3 class="animated3"> Ciencia, Tecnología</h3>
+               	 			<h3 class="animated3"><b>Ciencia y Tecnología</b></h3>
                	 			<div class="line"></div>
                	 			
                	 		</div>
@@ -140,11 +141,11 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="feature_header text-center">
                             <h3 class="feature_title">Nuestros <b>Servicios</b></h3>
-                            <h4 class="feature_sub">La  Empresa CATS Evolution nació  el 21 de Abril del año 2004, orientado en un principio al Asesoramiento, Capacitación e Investigación Tecnológica, de ahí proviene el significado de cada una de las letras.
+                            <h4 class="feature_sub"><p style="text-align: justify;">La  Empresa CATS Evolution nació  el 21 de Abril del año 2004, orientado en un principio al Asesoramiento, Capacitación e Investigación Tecnológica, de ahí proviene el significado de cada una de las letras.
                             Se creó esta micro empresa previo a un estudio y análisis de  la problemática de aquel entonces en cuestión de asesoramientos. Las Áreas que se manejaban en aquel entonces eran las de Informática, Electricidad, Electrónica, dando como resultado la elaboración de proyectos los mismos que han sido expuestos en ferias locales y nacionales dando como resultado nominaciones de mucho agrado para la empresa y personas que han sido asesoradas.<br>
                             <br>En la actualidad se cuenta con el manejo de proyección y de asesoramiento, así como también de ejecución de las siguientes áreas: Electrónica, Informática, Proyectos combinados de Electrónica e Informática, Domótica, Robótica, Electricidad, Telefonía, Pre Producción, Producción, Post producción de video, Diseño, Análisis y Elaboración de Proyectos en estas áreas, cuyos trabajos realizados tienen como aval respectivo las condecoraciones respectivas en los festivales de Ciencia y Tecnología.
                             <br><br>
-                            En caso de Producción de video se ha obtenido el reconocimiento a nivel local, nacional e internacional por parte  de  las alcabalas de Madrid y de Zaragoza en el proyecto de producción organizado en Riobamba en el año 2009, cuyo video es el porta estandarte del país en aquella organización, así como también la obtención del primer y segundo puesto en el concurso organizado por la Casa de la Cultura Juvenil de Chimborazo, en la sección de nano metrajes, esto en el año 2010.</h4>
+                            En caso de Producción de video se ha obtenido el reconocimiento a nivel local, nacional e internacional por parte  de  las alcabalas de Madrid y de Zaragoza en el proyecto de producción organizado en Riobamba en el año 2009, cuyo video es el porta estandarte del país en aquella organización, así como también la obtención del primer y segundo puesto en el concurso organizado por la Casa de la Cultura Juvenil de Chimborazo, en la sección de nano metrajes, esto en el año 2010.</p></h4>
                             <div class="divider"></div>
                         </div>
                     </div>  <!-- Col-md-12 End -->
@@ -216,43 +217,62 @@
   			<div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="feature_header text-center">
                     <h3 class="feature_title">Mantengase en <b>Contacto</b></h3>
-                    <h4 class="feature_sub">Para solicitar información, rellene el siguiente formulario. Si lo prefiere, también puede ponerse en contacto con nosotros a través del teléfono o enviándonos un E-Mail. </h4>
+                    <h4 class="feature_sub">Para solicitar información, rellene el siguiente formulario. Si lo prefiere, también puede ponerse en contacto con nosotros a través del teléfono o enviándonos un <b>e-mail</b>. </h4>
                     <div class="divider"></div>
                 </div>
   			</div>
         </div>
+        <?php if (!empty($_SESSION['message'])):?>
+	        <?php if (!empty($_SESSION['valor'])):?>        	
+	        <div class="alert alert-success square fade in alert-dismissable">			  
+			<?php else:?>
+			<div class="alert alert-danger square fade in alert-dismissable">
+			<?php endif;?>
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong><?php echo $_SESSION['message'];?></strong>			
+			</div>
+			<?php session_destroy();?>
+		<?php endif;?>	
+        <form action="enviar_email.php"  method="post" id="frmContacto" name="frmContacto">
         <div class="row">
              <div class="contact_full">
                 <div class="col-md-6 left">
                     <div class="left_contact">
-                        <form action="role">
-                            <div class="form-level">
-                                <input name="name" placeholder="Nombre" id="name"  value="" type="text" class="input-block">
-                                <span class="form-icon fa fa-user"></span>
+                            <div class="form-group">
+                            	<div class="form-level">
+                            		<input type="text" class="form-control" name="name" id="name" placeholder="Nombre">
+                                	<span class="form-icon fa fa-user"></span>
+                                </div>
                             </div>
-                            <div class="form-level">
-                                <input name="email" placeholder="Email" id="mail" class="input-block" value="" type="email">
-                                <span class="form-icon fa fa-envelope-o"></span>
+                            <div class="form-group">
+                            	<div class="form-level">
+                               		<input name="email" placeholder="Email" id="mail" class="form-control" value="" type="email">
+                                	<span class="form-icon fa fa-envelope-o"></span>
+                                </div>	
                             </div>
-                            <div class="form-level">
-                                <input name="name" placeholder="Telefono" id="phone" class="input-block" value="" type="text">
-                                <span class="form-icon fa fa-phone"></span>
-                            </div>
-                        </form>
+                            <div class="form-group">
+                            	<div class="form-level">
+                            		<input name="phone" placeholder="Teléfono" id="phone" class="form-control" value="" type="text" maxlength="10">                                	
+                                	<span class="form-icon fa fa-phone"></span>
+                                </div>	
+                            </div>                        
                     </div>
                 </div>
 
                 <div class="col-md-6 right">
-                    <div class="form-level">
-                        <textarea name="" id="messege"  rows="5" class="textarea-block" placeholder="Mensaje"></textarea>
-                        <span class="form-icon fa fa-pencil"></span>
+                    <div class="form-group">
+                    	<div class="form-level">
+                    		<textarea name="message" id="message"  rows="5" class="form-control" placeholder="Mensaje"></textarea>
+                        	<span class="form-icon fa fa-pencil"></span>
+                        </div>	
                     </div>
                 </div>
                 <div class="col-md-12 text-center">
-                    <button class="btn btn-main featured">Enviar Ahora</button>
+                    <button type="submit" class="btn btn-main featured">Enviar Ahora</button>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 </section>
 
@@ -366,6 +386,71 @@
         
 			 <!-- Custom js -->
         <script src="js/custom.js"></script>
-	     
-    </body>
+        
+        <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrapValidator.min.css"></link>
+        <script type="text/javascript">
+    jQuery(document).ready(function() {
+		jQuery('#frmContacto').bootstrapValidator({
+		    	message: 'This value is not valid',
+				feedbackIcons: {
+					valid: 'glyphicon glyphicon-ok',
+					invalid: 'glyphicon glyphicon-remove',
+					validating: 'glyphicon glyphicon-refresh'						
+				},
+				fields: {
+					name: {
+						validators: {
+							notEmpty: {
+								message: 'El nombre no puede ser vacío.'
+							},					
+							regexp: {
+								regexp: /^[a-zA-ZáéíóúÁÉÍÓÚ0-9-_ \.]+$/,
+								message: 'Ingrese un nombre válido.'
+							}
+						}
+					},
+					email: {
+						validators: {
+							notEmpty: {
+								message: 'El email no puede ser vacío.'
+							},					
+							emailAddress: {
+		                        message: 'El email no es válido.'
+		                    }
+
+						}
+					},
+					phone: {
+						validators: {
+							notEmpty: {
+								message: 'El número de teléfono no puede ser vacío.'							
+						},
+						regexp: {
+							regexp: /^[0-9]+$/,							
+							message: 'Ingrese un número de teléfono no es válido.'							
+						},
+						stringLength:{
+							min:9,
+							message: 'Ingrese un número de telefono con mínimo 9 dígitos.'
+							}
+						}
+					},	
+
+					message: {
+						validators: {
+							notEmpty: {
+								message: 'El mensaje no puede ser vacío.'							
+						},
+						regexp: {
+							regexp: /^[a-zA-ZáéíóúÁÉÍÓÚ0-9_ ,-\.]+$/,
+							message: 'Ingrese mensaje válido.'
+						}
+						}
+					},
+			}
+		});
+});		
+</script>        	     
+</body>
 </html>
