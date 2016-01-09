@@ -133,7 +133,8 @@ include("estructura/cabecera.php");
 				echo "</tr>";
 				
 				echo "</table>";
-				
+				$_SESSION["totalcoste"] = $totalcoste;
+				$_SESSION["cantidadTotal"] = $xTotal;
 				
 			}
 			else
@@ -141,8 +142,7 @@ include("estructura/cabecera.php");
 	
 			//Campos que nos serviran para informar la cesta de lo que llevamos comprados y que se mostrar� en 
 			//la p�gina PRODUCTOS.
-			$_SESSION["totalcoste"] = $totalcoste;
-			$_SESSION["cantidadTotal"] = $xTotal;
+			
 			echo "<p><a  class='btn btn-danger btn-sx' href='productos.php' title='lista de productos'>Lista de productos</a></p>";
 		
 		?>

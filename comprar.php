@@ -1,111 +1,182 @@
 <?php
-	//Iniciamos o continuamos sesión
+	//Iniciamos o continuamos sesiï¿½n
 	session_start();
 
 	$titulo = "Carrito de Compra con Php y Mysql";
 	include("estructura/conecta.php");
 	include("estructura/meta_tags.php");
 	include("estructura/cabecera.php");
-	
-	/*Declaramos la función para recuperar el último Id de la tabla Pedidos*/
-	//LLamada
-	//Buscar el maximo id de la tabla pedidos y añadirle uno
-	//$maxId = buscarMaxId('pedidos','id_pedido');
-	//$item_number = $maxId;
-	
-	/*function buscarMaxId($tabla,$campoId){
-		$id= 0;
-		$rs = mysql_query("SELECT MAX(id_pedido) AS id FROM pedidos");
-		if ($row = mysql_fetch_row($rs)) {
-		$id = $row[0];
+?>
+<script>
+
+function myFunction(){
+
+var n=document.getElementById('bus').value;
+
+if(n==''){
+
+ document.getElementById("myDiv").innerHTML="";
+ document.getElementById("myDiv").style.border="0px";
+
+ document.getElementById("pers").innerHTML="";
+
+ return;
+}
+
+loadDoc("q="+n,"buscar_sugerencia.php",function(){
+
+  if (xmlhttp.readyState==4 && xmlhttp.status==200){
+
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    document.getElementById("myDiv").style.border="1px solid #A5ACB2";
+
+    }else{ document.getElementById("myDiv").innerHTML='<img src="img/load.gif" width="50" height="50" />'; }
+
+  });
+}
+
+function validar(){
+	var cliente = document.frmRegistro.txtCliente;
+		
+	if (typeof cliente == "undefined" ){ 
+			alert("Tiene que seleccionar un Cliente para asociarlo con la compra.") 
+			
+		} else {
+			loadDoc("q="+cliente.value,"guardar_pedido.php",function(){
+
+				  if (xmlhttp.readyState==4 && xmlhttp.status==200){
+							//levantar popup
+							var posicion_x; 
+							var ancho = 650;
+							var alto = 450;
+							var posicion_y; 
+							posicion_x=(screen.width/2)-(ancho/2); 
+							posicion_y=(screen.height/2)-(alto/2); 
+							var w = window.open("", "Imprmir Pedido", "width="+ancho+",height="+alto+",menubar=0,toolbar=0,directories=0,scrollbars=no,resizable=no,left="+posicion_x+",top="+posicion_y);
+								w.document.write( xmlhttp.responseText );								
+								w.document.close();
+				    }
+
+				  });
+							
 		}
-		return $id++;
-	}*/
 	
-	/*Recuperamos los productos del carro de la compra*/
-	function recuperar_productos(){
-		$contador = 0;
-		//recorremos el array de SESION	hasta el final
-		foreach($_SESSION['carro'] as $id => $x){ 
-			$contador++; //Número de item que después usaremos en el atribute name de los inputs 
-			$resultado = mysql_query("SELECT id, producto, precio FROM productos WHERE id=$id");
-			$mifila = mysql_fetch_array($resultado);
-			$id = $mifila['id'];
-			$producto = $mifila['producto'];
-			//acortamos el nombre del producto a 40 caracteres
-			$producto = substr($producto,0,40);
-			$precio = $mifila['precio'];
-		?>
-			<input name="item_number_<?php echo $contador; ?>" type="hidden" value="<?php echo $id; ?>">
-			<input name="item_name_<?php echo $contador; ?>" type="hidden" value="<?php echo $producto; ?>"> 
-			<input name="amount_<?php echo $contador; ?>" type="hidden" value="<?php echo $precio; ?>"> 
-			<input name="quantity_<?php echo $contador; ?>" type="hidden" value="<?php echo $x; ?>"> 
-		<?php
-		}
-	}
-	?>
-	<div id="derecha">
-	
-	<h1>Conectando con Paypal ...... </h1>
-	
+}
+//-------------------------------
+
+function myFunction2(cod){
+
+document.getElementById("myDiv").innerHTML="";
+document.getElementById("myDiv").style.border="0px";
+document.getElementById("tabla").innerHTML="";
+document.getElementById("tabla").style.border="0px";
+
+loadDoc("vcod="+cod,"buscar_cliente.php",function(){
+
+  if (xmlhttp.readyState==4 && xmlhttp.status==200){
+
+    document.getElementById("pers").innerHTML=xmlhttp.responseText;
+    
+    
+    }else{ document.getElementById("pers").innerHTML='<img src="img/load.gif" width="50" height="50" />'; }
+
+  });
+}
+</script>
+
+<div class="section">
+    <div class="container">
+    <div class="the-box">
+    <h2 class="page-title">Detalle de Pedido</h2>
+		<br /><br />
+
+Nombre del Cliente: <input type="text" id="bus" onKeyUp="myFunction()" size="30" required="required" autofocus="autofocus" placeholder="Buscar" />
+
+<div id="myDiv"></div>
+
+<br />
+<form action="" method="post" name="frmRegistro" id="frmRegistro">
+<div id="tabla">
+
+</div>
+
+	<div id="pers" >
+</div>	
 		<div class='text-border'>
-			<!-- La dirección de llamada del formulario de pruebas es https://www.sandbox.paypal.com/cgi-bin/webscr 
-			     pero al pasar a ventas reales deberemos indicar https://www.paypal.com/cgi-bin/webscr
-				 
-				 OJO!!! Hay que cambiar también los inputs que hacen referencia a nuestros archivos en local o remoto
-				 y el mail del acceso a Paypal del vendedor. 
-				 		"shopping_url", 
-						 "return",
-						 "hidden",
-						 "notify_url",
-						 "business"
-			 -->
-			<form name='formTpv' method='post' action='https://www.sandbox.paypal.com/cgi-bin/webscr' style="border: 1px solid #CECECE;padding-left: 10px;">
-					<input name="cmd" type="hidden" value="_cart"> 
-					<input name="upload" type="hidden" value="1">
-					<input name="business" type="hidden" value="correosandboxvendedor@gmail.com">
-					<input name="shopping_url" type="hidden" value="http://localhost/carro_final/productos.php">
-					<input name="currency_code" type="hidden" value="USD">
-					<input name="return" type="hidden" value="http://localhost/carro_final/exito.php">
-					<input type='hidden' name='cancel_return' value='http://localhost/carro_final/errorPaypal.php'>
-					<input name="notify_url" type="hidden" value="http://localhost/carro_final/paypalipn.php">
-					<input name="rm" type="hidden" value="2">
-								
-					<?php
-						recuperar_productos();
-					?>
-					<!-- 	SI QUIERES COLOCAR EL BOTON EN LUGAR DE QUE VAYA AUTOMATICAMENTE A PAYPAL
-								TIENES QUE DESASTERISCAR EL INPUT DEL BOTON Y ASTERISCAR EL JAVASCRIPT QUE
-								HAY MAS ABAJO.
-								<script type='text/javascript'>
-									document.formTpv.submit();
-								</script>
-					-->
-					<!--<input type="submit" value="PayPal SandBox">-->
-					<!-- VARIABLES PAYPAL UTILIZADAS
-					      cmd > indica el tipo de fichero que va a recoger PayPal 
-										_cart : varios items
-										_donations : donaciones
-										_xclick : boton de compra
-								business > indica el identificador del negocio registrado en paypal. Ejemplo : buyer_1265883185_biz@gmail.com
-								shopping_url > la dirección de nuestra tienda online . Ejemplo : http://www.fernandosalom.es
-								currency_code > el tipo de moneda (USD , EUR ...)
-								return > sera el enlace de vuelta a nuestro negocio que ofrece paypal
-								notify_url > en esta pagina es donde recogeremos el estado del pago y un gran numeros de variables con informacion adicional en nuestro caso lo hemos llamado paypal_ipn.php
-								rm > Indica el método que se va a utilizar para enviar la información de vuelta a nuestro sitio. RM=1 información enviada por GET , RM=2 información enviada por POST (En este caso usamos este método porque es un script php el que recoge los datos) . (Gracias Miguel)
-								item_number_X > identificador del producto
-								item_name_X > nombre del producto
-								amount_X > precio del producto
-								quantity_X > cantidad del producto
-					-->
-			</form>
-			<!-- Esto hará que se envie la información sin necesidad de hacer clic en ningún botón -->
-			<!-- Si lo quitamos, el usuario tendrá que hacer clic para realizar la compra -->
-			<script type='text/javascript'>
-				document.formTpv.submit();
-			</script>
+<?php 
+				if(isset($_SESSION['carro'])){
+				echo "<br><table border=0 cellspacing=5 cellpadding=3 width='100%' >";
+				$totalcoste = 0;
+				//Inicializamos el contador de productos seleccionados.
+				$xTotal = 0;
+				
+				echo "<tr style='font-size: 20px;'>";
+					echo "<td>Producto</td>";
+					echo "<td>Cantidad</td>";
+					echo "<td>Precio</td>";
+					echo "<td colspan=2 align=right>Total</td>";
+				echo "</tr>";
+				echo "<tr><td colspan=5><hr style='margin: 20px 0px;'></td></tr>";
+	
+				$detalle =  array();
+				foreach($_SESSION['carro'] as $id => $x){
+					$resultado = mysql_query("SELECT id, producto, precio FROM productos WHERE id=$id");
+					$mifila = mysql_fetch_array($resultado);
+					$id = $mifila['id'];
+					$producto = $mifila['producto'];
+					//acortamos el nombre del producto a 40 caracteres
+					$producto = substr($producto,0,40);
+					$precio = $mifila['precio'];
+					//Coste por artï¿½culo segï¿½n la cantidad elegida
+					$coste = $precio * $x;
+					//Coste total del carro
+					$totalcoste = $totalcoste + $coste;
+					//Contador del total de productos aï¿½adidos al carro
+					$xTotal = $xTotal + $x;
+					
+					echo "<tr>";
+					echo "<td align='left'> $producto </td>";
+					echo "<td align='center'>$x</td>";
+					echo "<td align='center'>".$precio * 1 ."</td>";
+					
+					echo "<td align='right' style='margin-left:10px'>$ $coste ";
+					echo "</tr>";
+					$row = array('id'=>$id, 'nombre' => $producto, 'cantidad' => $x, 'precio' => $precio * 1);
+					$detalle[] = $row;
+				}
+				$_SESSION['detalle'] = $detalle;
+				echo "<tr><td colspan='4'><hr></td></tr>";
+				echo "<tr>";
+				echo "<td align='right' colspan='3'><b><br>Total = </b></td>";
+				echo "<td align='right'><b><br>$  $totalcoste </b></td>";
+				echo "</tr>";
+				//BOTON COMPRAR
+				echo "<tr>";
+				echo "<td align='right' colspan='4'>
+						<a class='btn btn-success' href='javascript:validar();'>Imprimir Compra</a>
+				</td>";
+				echo "</tr>";
+				
+				echo "</table>";
+				
+				$_SESSION["totalcoste"] = $totalcoste;
+				$_SESSION["cantidadTotal"] = $xTotal;
+			}
+			else
+				echo "El carro est&aacute; vac&iacute;o";
+	
+			//Campos que nos serviran para informar la cesta de lo que llevamos comprados y que se mostrarï¿½ en 
+			//la pï¿½gina PRODUCTOS.
+			
+			echo "<p><a  class='btn btn-danger btn-sx' href='productos.php' title='lista de productos'>Lista de productos</a></p>";
+		
+		?>
+	
 		</div> <!-- Cierro text-border -->
+		</form>
 	</div> <!-- Cierro derecha -->
+	</div>
+	</div>
 
 <?php
 include("estructura/pie.php");
