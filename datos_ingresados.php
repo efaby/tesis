@@ -1,12 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Confirmación de Ingreso</title>
-</head>
+<?php
+	//Iniciamos o continuamos sesi�n
+	session_start();
 
-<body>
+	$titulo = "Carrito de Compra con Php y Mysql";
+	include("estructura/conecta.php");
+	include("estructura/meta_tags.php");
+	include("estructura/cabecera.php");
+?>
+
+<div class="section">
+    <div class="container">
+    <div class="the-box">
 Datos ingresados <br/>
-<a href="productos.php">Regresar</a>
-</body>
-</html>
+<a class='btn btn-info' href="productos.php">Regresar</a>
+</div> <!-- Cierro derecha -->
+	</div>
+	</div>
+
+<?php
+include("estructura/pie.php");
+include("estructura/cerrar_etiquetas.php");
+?>

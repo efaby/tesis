@@ -42,14 +42,14 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 <ul class="menus">
   <li class="parent"><a href="#fakelink">Producto</a> 
     <ul class="sub-menus">
-      <li class="sub-list"><a href="productos.php">Venta</a></li>
-      <li class="sub-list"><a href="lista_productos.php">Listado Productos</a></li>
+      <li class="sub-list"><a href="productos.php">Pedido</a></li>
+      <li class="sub-list"><a href="lista_productos.php">Listado de Productos</a></li>
     </ul>    
   </li>
   <li class="parent"><a href="#" >Reparaci&oacute;n</a>
     <ul class="sub-menus">
       <li class="sub-list"><a href="reparar.php">Nueva Orden</a></li>
-      <li class="sub-list"><a href="informe_repara.php">Informe Reparaci&oacute;n</a></li>
+      <li class="sub-list"><a href="informe_repara.php">Informe de Reparaci&oacute;n</a></li>
     </ul>
   </li>
   <li class="parent"><a href="lista_proveedor.php" >Proveedor</a></li>
