@@ -16,6 +16,8 @@ $totalcoste = 0;
 foreach ($_SESSION['detalle'] as $row){
 	$sql = "insert into det_pedidos (id_pedido, id_producto, cantidad, precio) values (".$pedido_id.",".$row['id'].",".$row['cantidad'].",".$row['precio'].")";
 	$Result1 = mysql_query($sql) or die(mysql_error());
+	$sql = "update productos set cantidad = cantidad - 1 where id = ".$row['id'];
+	$Result2 = mysql_query($sql) or die(mysql_error());
 	$coste = $row['precio'] * $row['cantidad'];
 	$detalleHtml .= "<tr>
 	<td align='left'>". $row['nombre']." </td>
