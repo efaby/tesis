@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$titulo = "Carrito de Compra con Php y Mysql";
+$titulo = "Detalle de Pedido";
 
 include("estructura/conecta.php");
 include("estructura/meta_tags.php");
@@ -10,7 +10,7 @@ include("estructura/cabecera.php");
 	<div class="section">
     <div class="container">
     <div class="the-box">
-    <h2 class="page-title">Carrito de compras</h2>
+    <h2 class="page-title">Detalle de Pedido</h2>
 
 		<div class='text-border'>
 		<?php

@@ -2,7 +2,7 @@
 	//Iniciamos o continuamos sesi�n
 	session_start();
 
-	$titulo = "Carrito de Compra con Php y Mysql";
+	$titulo = "Detalle de Pedido";
 	include("estructura/conecta.php");
 	include("estructura/meta_tags.php");
 	include("estructura/cabecera.php");
@@ -52,7 +52,7 @@ function validar(){
 							var posicion_y; 
 							posicion_x=(screen.width/2)-(ancho/2); 
 							posicion_y=(screen.height/2)-(alto/2); 
-							var w = window.open("", "Imprmir Pedido", "width="+ancho+",height="+alto+",menubar=0,toolbar=0,directories=0,scrollbars=no,resizable=no,left="+posicion_x+",top="+posicion_y);
+							var w = window.open("", "Imprimir Pedido", "width="+ancho+",height="+alto+",menubar=0,toolbar=0,directories=0,scrollbars=no,resizable=no,left="+posicion_x+",top="+posicion_y);
 								w.document.write( xmlhttp.responseText );								
 								w.document.close();
 				    }
