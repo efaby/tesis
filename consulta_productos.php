@@ -31,11 +31,11 @@ include("estructura/conecta.php");
 				echo "<tr class='borde_tabla'>
 					  <td style='display:none'>" . $productos['id'] . "</td>";     // imprime el texto
 				echo "<td>" . $productos['producto']. " ".$productos['marca']. "".$productos['modelo'].  "</td>";     // imprime el nombre
-				echo "<td style='text-align:right'> $" . $productos['precio'] . " </td>"; // imprime el precio
-				echo "<td style='text-align:right'>" . $productos['cantidad'] . " </td>"; // imprime la cantidad
-				echo "<td style='text-align:right'> 
+				echo "<td style='text-align:left'> $" . $productos['precio'] . " </td>"; // imprime el precio
+				echo "<td style='text-align:left'>" . $productos['cantidad'] . " </td>"; // imprime la cantidad
+				echo "<td style='text-align:center'> 
 						<a  class='btn btn-info btn-xs' href='update_producto.php?id=" . $productos['id']. "'>  Actualizar</a></td>";
-				echo "<td style='text-align:right' >   
+				echo "<td style='text-align:center' >   
 						<a  class='btn btn-danger btn-xs' style=\"cursor:pointer;\" onclick=\"eliminarDato('".$productos['id']."')\">
 						 Eliminar</a> </td>";
 			  echo "</tr>"; 

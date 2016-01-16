@@ -11,7 +11,7 @@ include("estructura/cabecera.php");
 <div class="section">
     <div class="container">
     <div class="the-box" id="resultado">
-    <h2 class="page-title">Lista Reparaciones por Cliente</h2>
+    <h2 class="page-title">Lista de Reparaciones por Cliente</h2>
 
 <br /><br />
 

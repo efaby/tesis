@@ -17,7 +17,7 @@ include("estructura/cabecera.php");
 			/*MOSTRAR Carro*/
 			//$id = $_GET['id'];
 			
-			$resultado = mysql_query("SELECT id, producto, marca, modelo, precio FROM productos");
+			$resultado = mysql_query("SELECT id, producto, marca, modelo, precio FROM productos where cantidad>0");
 			
 			//Desplegamos una tabla con los datos de los productos
 			echo "<div class=verproductos>";

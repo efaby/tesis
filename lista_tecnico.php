@@ -3,7 +3,7 @@ session_start();
 
 $titulo = "Lista de Tecnicos para Actualizar / Eliminar";
 include("estructura/conecta.php");
-include("estructura/meta_tags.php");
+include("estructura/meta_tags_tecnico.php");
 include("estructura/cabecera.php");
 
 //include("izquierda.php");

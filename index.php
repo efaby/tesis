@@ -199,15 +199,21 @@
                     </div>
                 </div>  <!-- Col-md-12 End -->
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-            	<div class="embed-responsive embed-responsive-16by9" style="margin: 0 auto; width: 600px;">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/40DoaYPtsMo" style="width: 600px; height: 400px;"></iframe>
-</div>
-            </div>
-        </div>
-
-
-   
+             <div class="row">
+            	<div class="col-md-4">
+            		<div class="embed-responsive embed-responsive-16by9" style="margin: 0 auto; width: 500px;height: 500px;">
+  						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/40DoaYPtsMo" style="width: 600px; height: 400px;"></iframe>
+					</div>
+            	</div>	    
+            	<div class="col-md-3">
+            	</div>
+ 				<div class="col-md-4">
+            		<div class="embed-responsive embed-responsive-16by9" style="margin: 0 auto; width: 500px;height: 500px;">
+  						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RqBkmYE8mZQ" style="width: 600px; height: 400px;"></iframe>
+					</div>
+            	</div>
+        	</div>
+		</div>   
 </section>  <!-- Portfolio Section End -->
 <!-- Conatct Area Start-->
 

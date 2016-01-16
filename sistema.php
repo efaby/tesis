@@ -1,6 +1,6 @@
 <?php session_start();
 
-$titulo = "Administracion";
+$titulo = "Administraci&oacute;n";
 include("estructura/conecta.php");
 include("estructura/meta_tags.php");
 include("estructura/cabecera2.php");
@@ -76,8 +76,8 @@ if (isset($_POST['txtUsuario'])) {
     header("Location: " . $MM_redirectLoginSuccess );
   }
   else {
-    echo '<div class="alert alert-danger fade in alert-dismissable" style="margin: 10px auto;width: 370px;">
-		<button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button>El usuario no existe o la categoria no es correcta
+    echo '<div class="alert alert-danger fade in alert-dismissable" style="margin: 10px auto;width: 400px;">
+		<button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button>El usuario no existe o el tipo de usuario no es correcto.
   		</div>';
 	
 	//header("Location: ". $MM_redirectLoginFailed );
@@ -87,7 +87,7 @@ if (isset($_POST['txtUsuario'])) {
 
 <h4 align="center">INICIO DE SESI&Oacute;N </h4>
 <form ACTION="<?php echo $loginFormAction; ?>" METHOD="POST" onSubmit="javascript:document.form.reset();">
-<table align="center" class='table table-th-block' style="width: 200px">
+<table align="center" class='table table-th-block' style="width: 400px">
   <tr>
     <td>Usuario: </td>
     <td><label>
@@ -101,11 +101,11 @@ if (isset($_POST['txtUsuario'])) {
     </label></td>
   </tr>
   <tr>
-  	<td>Tipo: </td>
+  	<td>Tipo de Usuario: </td>
     <td>
     	<select name="listTipo" class="form-control" >
-    	  <option value="administrador" selected="selected">administrador</option>
-    	  <option value="tecnico">tecnico</option>
+    	  <option value="administrador" selected="selected">Administrador</option>
+    	  <option value="tecnico">T&eacute;cnico</option>
         </select>
     </td>
   </tr>

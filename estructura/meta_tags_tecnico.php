@@ -14,53 +14,60 @@
    		//valido la cedula q no sea espacio en blanco
 			cedula=document.form1.Cedula.value.length
    			if (cedula==0 ){ 
-      			alert("Tiene que escribir su cedula") 
+      			alert("Ingrese una c\xe9dula v\xe1lida.") 
       			document.form1.Cedula.focus() 
       			return 0; 
    			}
 			
 			//valida que la cedula tenga 10 caracteres y no tenga guion
 			else if (cedula<10 ){ 
-      			alert("Por favor su cedula debe contener 10 caracteres y sin guion") 
+      			alert("Ingrese una  c\xe9dula con 10 caracteres y sin gui\xf3n.") 
       			document.form1.Cedula.focus() 
       			return 0; 
    			} 
 			
 			//valida el nombre
 			else if ( document.form1.Nombre.value.trim()==""){ 
-      			alert("Tiene que escribir su nombre") 
+      			alert("Ingrese un nombre v\xe1lido.") 
       			document.form1.Nombre.focus() 
       			return 0; 
    			}
 			
 			//valida el apellido
 			else if (document.form1.Apellido.value.trim()==""){ 
-      			alert("Tiene que escribir su apellido") 
+      			alert("Ingrese un apellido v\xe1lido.") 
       			document.form1.Apellido.focus() 
       			return 0; 
 			}
 			
 			//valida la direccion
 			else if (document.form1.Direccion.value.trim()==""){ 
-      			alert("Tiene que escribir su direccion") 
+      			alert("Ingrese una direcci\xf3n v\xe1lida.") 
       			document.form1.Direccion.focus() 
       			return 0; 
 			}
 			
 			//valida el numero de telefono
 			else if (document.form1.Telefono.value.trim()==""){ 
-      			alert("Tiene que escribir su telefono") 
+      			alert("Ingrese un n\xfamero de tel\xe9fono v\xe1lido.") 
       			document.form1.Telefono.focus() 
       			return 0; 
 			}
 			
 			//valida que el telefono tenga 9 digitos
 			else if (document.form1.Telefono.value.length<9 ){ 
-      			alert("Por favor su n�mero de Tel�fono debe contener 9 caracteres") 
+      			alert("Ingrese un n\xfamero de tel\xe9fono de 9 caracteres.") 
       			document.form1.Telefono.focus() 
       			return 0; 
    			}
-   	
+   			
+			//valida contraseña
+			else if (document.form1.Password.value != document.form1.ConfirmarPass.value ){ 
+      			alert("La contrase\xf1a y confirmar contrase\xf1a no son iguales.") 
+      			document.form1.Password.focus() 
+      			return 0; 
+   			}
+   			
    			else {
 				//el formulario se envia 
    			//	alert("Muchas gracias por enviar el formulario"); 
@@ -92,7 +99,7 @@ function eliminarDato(idtecnico){
 	divResultado = document.getElementById('resultado');
 	
 	//usaremos un cuadro de confirmacion	
-	var eliminar = confirm("De verdad desea eliminar este dato?")
+	var eliminar = confirm("\xbfEst\xe1 seguro que desea eliminar el dato?")
 	if ( eliminar ) {
 		//instanciamos el objetoAjax
 		ajax=objetoAjax();

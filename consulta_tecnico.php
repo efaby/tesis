@@ -34,9 +34,9 @@ include("estructura/conecta.php");
 				echo "<td style='text-align:left'>" . $tecnicos['telefono'] . " </td>"; // imprime el telefono
 				echo "<td style='text-align:right'> 
 						<a class='btn btn-info btn-xs' href='update_tecnico.php?id_tecnico=" . $tecnicos['id_tecnico']. "'>  Actualizar</a></td>";
-				echo "<td style='text-align:right' >   
-						<a class='btn btn-danger btn-xs' style=\"cursor:pointer;\" onclick=\"eliminarDato('".$tecnicos['id_tecnico']."')\">
-						 Eliminar</a> </td>";
+				echo "<td style='text-align:right'>  
+					 <a class='btn btn-danger btn-xs' style=\"cursor:pointer;\" onclick=\"eliminarDato('".$tecnicos['id_tecnico']."')\">
+						 Eliminar</a> </td>";				
 			  echo "</tr>"; 
 			} // fin del bucle de ordenes
 							

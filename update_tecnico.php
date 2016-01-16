@@ -54,7 +54,15 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['id_tecnico'], "int"));
 
   $Result1 = mysql_query($updateSQL) or die(mysql_error());
-
+  
+  if ($_POST['Password'])
+  {
+  	$updateUser= sprintf("UPDATE usuario set Password = trim(%s) WHERE Login=%s",
+  		GetSQLValueString($_POST['Password'], "text"),
+  		GetSQLValueString($_POST['Cedula'], "text"));
+  	$Result= mysql_query($updateUser) or die(mysql_error());
+  }
+  
   $updateGoTo = "lista_tecnico.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
@@ -85,11 +93,11 @@ $totalRows_rsClientes = mysql_num_rows($rsClientes);
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Nombres:</td>
-      <td colspan="2"><input type="text" name="Nombre" value="<?php echo htmlentities($row_rsClientes['nombre'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
+      <td colspan="2"><input type="text" name="Nombre" value="<?php echo htmlentities($row_rsClientes['nombre'], ENT_COMPAT, 'utf-8'); ?>" size="32" onkeypress="return soloLetras(event)"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Apellidos:</td>
-      <td colspan="2"><input type="text" name="Apellido" value="<?php echo htmlentities($row_rsClientes['apellido'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
+      <td colspan="2"><input type="text" name="Apellido" value="<?php echo htmlentities($row_rsClientes['apellido'], ENT_COMPAT, 'utf-8'); ?>" size="32"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Direcci&oacute;n:</td>
@@ -99,6 +107,15 @@ $totalRows_rsClientes = mysql_num_rows($rsClientes);
       <td nowrap="nowrap" align="right">Tel&eacute;fono:</td>
       <td colspan="2"><input type="text" name="Telefono" value="<?php echo htmlentities($row_rsClientes['telefono'], ENT_COMPAT, 'utf-8'); ?>" size="32" maxlength="10" onkeypress="return soloNumeros(event)" /></td>
     </tr>
+      <tr valign="baseline">
+      <td nowrap="nowrap" align="right">Password:</td>
+      <td colspan="2"><input type="password" name="Password" value="" size="32" maxlength="10"  /></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap="nowrap" align="right">Confirmar Password:</td>
+      <td colspan="2"><input type="password" name="ConfirmarPass" value="" size="32" maxlength="10"  /></td>
+    </tr>
+   
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">&nbsp;</td>
       <td><br><button type="submit"  class="btn btn-success">Actualizar</button>&nbsp;

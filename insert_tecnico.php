@@ -56,7 +56,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   
   $insertUser= sprintf("INSERT INTO usuario (Login, Password, categoria) VALUES (trim(%s), trim(%s), trim(%s))",
                        GetSQLValueString($_POST['Cedula'], "text"),
-					   GetSQLValueString($_POST['Cedula'], "text"),
+					   GetSQLValueString($_POST['Password'], "text"),
 					   GetSQLValueString("tecnico", "text"));
 					   
     $Result= mysql_query($insertUser) or die(mysql_error());
@@ -96,6 +96,14 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Tel&eacute;fono:</td>
       <td colspan="2"><input type="text" name="Telefono" value="" size="32" onkeypress="return soloNumeros(event)" maxlength="10"  /></td>
+    </tr>
+     <tr valign="baseline">
+      <td nowrap="nowrap" align="right">Password:</td>
+      <td colspan="2"><input type="password" name="Password" value="" size="32" maxlength="10"  /></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap="nowrap" align="right">Confirmar Password:</td>
+      <td colspan="2"><input type="password" name="ConfirmarPass" value="" size="32" maxlength="10"  /></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">&nbsp;</td>

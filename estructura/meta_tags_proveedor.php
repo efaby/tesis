@@ -92,7 +92,7 @@ function eliminarDato(proveedor){
 	divResultado = document.getElementById('resultado');
 	
 	//usaremos un cuadro de confirmacion	
-	var eliminar = confirm("De verdad desea eliminar este dato?")
+	var eliminar = confirm("\xbfEst\xe1 seguro que desea eliminar el dato?")
 	if ( eliminar ) {
 		//instanciamos el objetoAjax
 		ajax=objetoAjax();
