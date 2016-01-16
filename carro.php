@@ -29,8 +29,8 @@ include("estructura/cabecera.php");
 			switch($action){
 			
 				case "add":
-					if(isset($_SESSION['carro'][$id]))
-						$_SESSION['carro'][$id]++;
+					if(isset($_SESSION['carro'][$id]))					
+						$_SESSION['carro'][$id]++;					
 					else
 						$_SESSION['carro'][$id]=1;
 				break;
@@ -89,13 +89,22 @@ include("estructura/cabecera.php");
 	
 				
 				foreach($_SESSION['carro'] as $id => $x){
-					$resultado = mysql_query("SELECT id, producto, precio FROM productos WHERE id=$id");
+					$resultado = mysql_query("SELECT id, producto, precio, cantidad FROM productos WHERE id=$id");
 					$mifila = mysql_fetch_array($resultado);
 					$id = $mifila['id'];
 					$producto = $mifila['producto'];
 					//acortamos el nombre del producto a 40 caracteres
 					$producto = substr($producto,0,40);
 					$precio = $mifila['precio'];
+					$cantidad = $mifila['cantidad'];
+					$stock = $x;
+					if($cantidad < $x){
+						$_SESSION['carro'][$id]--;
+						$x --;
+						if($_SESSION['carro'][$id]==0)
+							unset($_SESSION['carro'][$id]);
+						$stock ="Stock Insuficiente, solamente hay ".$x . " productos.";
+					}
 					//Coste por art�culo seg�n la cantidad elegida
 					$coste = $precio * $x;
 					//Coste total del carro
@@ -105,7 +114,7 @@ include("estructura/cabecera.php");
 					
 					echo "<tr>";
 					echo "<td align='left'> $producto </td>";
-					echo "<td align='center'>$x</td>";
+					echo "<td >$stock</td>";
 					
 					echo "<td align='left'>";
 					echo "<a href='carro.php?id=". $id ."&action=add'><img src='img/aumentar.png' style='padding:0 0px 0 5px;' alt='Aumentar cantidad' /></a>";

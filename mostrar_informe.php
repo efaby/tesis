@@ -47,9 +47,27 @@ $rsRepara = mysql_query($query_rsRepara) or die(mysql_error());
 $row_rsRepara = mysql_fetch_array($rsRepara);
 $totalRows_rsRepara = mysql_num_rows($rsRepara);
 ?>
-
+<script type="text/javascript">
+function imprimir(){
+	var posicion_x; 
+	var ancho = 850;
+	var alto = 650;
+	var posicion_y; 
+	posicion_x=(screen.width/2)-(ancho/2); 
+	posicion_y=(screen.height/2)-(alto/2); 
+	var w = window.open("", "Imprimir Pedido", "width="+ancho+",height="+alto+",menubar=0,toolbar=0,directories=0,scrollbars=no,resizable=no,left="+posicion_x+",top="+posicion_y);
+	var h = "<link href='css/bootstrap.min.css' rel='stylesheet'>";
+	h = h +	"<link href='css/font-awesome/css/font-awesome.min.css' rel='stylesheet'>";
+	h = h +	"<link href='css/style.css' rel='stylesheet'>";
+	h = h +	"<link href='css/style-responsive.css' rel='stylesheet'>";
+	h = h +	"<body style='padding-top: 0px;'>	<div style='padding: 10px; text-align: right;'><a href='javascript:window.print()'> <span class='glyphicon glyphicon-print'></span>&nbsp;Imprimir</a>	</div>";
+	w.document.write( h + document.getElementById("resultado").innerHTML );								
+	w.document.close();
+}
+</script>
 <div class="section">
     <div class="container">
+    <div style="text-align: right; margin: 20px;"><a class='btn btn-info btn-xs' href='javascript:imprimir();'>Imprimir</a></div>
     <div class="the-box" id="resultado">
     <h2 class="page-title">Informe de Reparaci&oacute;n</h2>
 <table class='table table-th-block'>
@@ -110,11 +128,10 @@ $totalRows_rsRepara = mysql_num_rows($rsRepara);
       <input type="text" name="txtCosto" id="txtCosto" readonly="readonly" value="<?php echo htmlentities($row_rsRepara['costo'], ENT_COMPAT, 'utf-8'); ?>" />
     </label></td>
   </tr>
-  <tr valign="baseline">
-      <td nowrap="nowrap" align="right">&nbsp;</td>
-      <td colspan="4"><a class="btn btn-info" href="informe_repara.php">Regresar</a></td>
-    </tr>
+  
 </table>
 </div>
+<div style="margin-top: 20px;"> <a class="btn btn-info" href="informe_repara.php">Regresar</a></div>
+
 </div>
 </div>
