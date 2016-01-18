@@ -93,15 +93,15 @@ $totalRows_rsClientes = mysql_num_rows($rsClientes);
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Nombres:</td>
-      <td colspan="2"><input type="text" name="Nombre" value="<?php echo htmlentities($row_rsClientes['nombre'], ENT_COMPAT, 'utf-8'); ?>" size="32" onkeypress="return soloLetras(event)"/></td>
+      <td colspan="2"><input type="text" name="Nombre" value="<?php echo $row_rsClientes['nombre']; ?>" size="32" onkeypress="return soloLetras(event)"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Apellidos:</td>
-      <td colspan="2"><input type="text" name="Apellido" value="<?php echo htmlentities($row_rsClientes['apellido'], ENT_COMPAT, 'utf-8'); ?>" size="32"/></td>
+      <td colspan="2"><input type="text" name="Apellido" value="<?php echo $row_rsClientes['apellido']; ?>" size="32"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Direcci&oacute;n:</td>
-      <td colspan="2"><input type="text" name="Direccion" value="<?php echo htmlentities($row_rsClientes['direccion'], ENT_COMPAT, 'utf-8'); ?>" size="32" onkeypress="return LetrasNumeros(event)" /></td>
+      <td colspan="2"><input type="text" name="Direccion" value="<?php echo $row_rsClientes['direccion']; ?>" size="32" onkeypress="return LetrasNumeros(event)" /></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Tel&eacute;fono:</td>

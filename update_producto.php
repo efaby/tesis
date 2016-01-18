@@ -83,15 +83,15 @@ $totalRows_rsProductos = mysql_num_rows($rsProductos);
   <table align="center">
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Nombre del Producto: </td>
-      <td colspan="2"><input name="producto" type="text" value="<?php echo htmlentities($row_rsProductos['producto'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
+      <td colspan="2"><input name="producto" type="text" value="<?php echo $row_rsProductos['producto']; ?>" size="32"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Marca: </td>
-      <td colspan="2"><input name="marca" type="text" value="<?php echo htmlentities($row_rsProductos['marca'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
+      <td colspan="2"><input name="marca" type="text" value="<?php echo $row_rsProductos['marca']; ?>" size="32"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Modelo: </td>
-      <td colspan="2"><input name="modelo" type="text" value="<?php echo htmlentities($row_rsProductos['modelo'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
+      <td colspan="2"><input name="modelo" type="text" value="<?php echo $row_rsProductos['modelo']; ?>" size="32"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Cantidad: </td>

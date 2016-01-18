@@ -87,15 +87,15 @@ $totalRows_rsProveedor = mysql_num_rows($rsProveedor);
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Nombre:</td>
-      <td colspan="2"><input name="Nombre" type="text" value="<?php echo htmlentities($row_rsProveedor['Nombre'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
+      <td colspan="2"><input name="Nombre" type="text" value="<?php echo $row_rsProveedor['Nombre']; ?>" size="32"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Apellido:</td>
-      <td colspan="2"><input name="Apellido" type="text" value="<?php echo htmlentities($row_rsProveedor['Apellido'], ENT_COMPAT, 'utf-8'); ?>" size="32" readonly="readonly" /></td>
+      <td colspan="2"><input name="Apellido" type="text" value="<?php echo $row_rsProveedor['Apellido']; ?>" size="32"/></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Direcci&oacute;n:</td>
-      <td colspan="2"><input type="text" name="Direccion" value="<?php echo htmlentities($row_rsProveedor['Direccion'], ENT_COMPAT, 'utf-8'); ?>" size="32" onkeypress="return LetrasNumeros(event)" /></td>
+      <td colspan="2"><input type="text" name="Direccion" value="<?php echo $row_rsProveedor['Direccion']; ?>" size="32" onkeypress="return LetrasNumeros(event)" /></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Tel&eacute;fono:</td>
